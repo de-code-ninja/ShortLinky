@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 async function mongoConnect(){
-   (await mongoose.connect("mongodb://localhost:27017/urlShortner")).isObjectIdOrHexString(res=>{
+   (await mongoose.connect(process.env.MONGO_URI)).isObjectIdOrHexString(res=>{
       console.log("database connected");
    })
 }
